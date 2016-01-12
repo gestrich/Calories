@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalorieTableViewCell" customModule="Calorie_Log" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalorieCell" id="new-9J-Lxd" customClass="CalorieTableViewCell" customModule="Calorie_Log" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="new-9J-Lxd" id="4MJ-7G-IQK">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5v-67-1cY" customClass="NumberView" customModule="Calorie_Log" customModuleProvider="target">
+                        <rect key="frame" x="13" y="7" width="40" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="8pg-Ph-nKd"/>
+                            <constraint firstAttribute="width" constant="40" id="hcP-IY-8bP"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTe-aZ-Znc">
+                        <rect key="frame" x="61" y="11" width="83" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="WTe-aZ-Znc" firstAttribute="leading" secondItem="U5v-67-1cY" secondAttribute="trailing" constant="8" symbolic="YES" id="5Bc-Y7-2Ky"/>
+                    <constraint firstItem="WTe-aZ-Znc" firstAttribute="bottom" secondItem="4MJ-7G-IQK" secondAttribute="bottomMargin" id="D11-31-r0L"/>
+                    <constraint firstItem="U5v-67-1cY" firstAttribute="top" secondItem="4MJ-7G-IQK" secondAttribute="topMargin" constant="5" id="Das-2G-ub6"/>
+                    <constraint firstItem="WTe-aZ-Znc" firstAttribute="centerY" secondItem="4MJ-7G-IQK" secondAttribute="centerY" id="IBV-d7-041"/>
+                    <constraint firstItem="WTe-aZ-Znc" firstAttribute="leading" secondItem="4MJ-7G-IQK" secondAttribute="leading" constant="71" id="Ixu-o1-M3y"/>
+                    <constraint firstItem="U5v-67-1cY" firstAttribute="centerY" secondItem="4MJ-7G-IQK" secondAttribute="centerY" id="eef-ds-bid"/>
+                    <constraint firstItem="U5v-67-1cY" firstAttribute="leading" secondItem="4MJ-7G-IQK" secondAttribute="leadingMargin" constant="5" id="qmP-gv-gyw"/>
+                    <constraint firstItem="WTe-aZ-Znc" firstAttribute="leading" secondItem="U5v-67-1cY" secondAttribute="trailing" constant="15" id="ur3-US-jYO"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Das-2G-ub6"/>
+                        <exclude reference="D11-31-r0L"/>
+                        <exclude reference="Ixu-o1-M3y"/>
+                        <exclude reference="ur3-US-jYO"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="calorieLabel" destination="WTe-aZ-Znc" id="flO-Qi-3Vb"/>
+                <outlet property="numberView" destination="U5v-67-1cY" id="QLP-Gh-MFV"/>
+            </connections>
+            <point key="canvasLocation" x="-14" y="-32"/>
+        </tableViewCell>
+    </objects>
+</document>
