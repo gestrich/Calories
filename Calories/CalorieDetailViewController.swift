@@ -139,6 +139,7 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         var thisFood : Food
         if food != nil {
             thisFood = food!
+            food = nil
         } else {
             thisFood = Food(entity:entityDescription!, insertInto:managedObjectContext)
         }
