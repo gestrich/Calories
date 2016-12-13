@@ -14,39 +14,39 @@ class SettingsModel: NSObject {
         
         get {
             //NSUserDefaults.standardUserDefaults().removeObjectForKey("test")
-            let value = NSUserDefaults.standardUserDefaults().valueForKey("test") as! NSNumber?
+            let value = UserDefaults.standard.value(forKey: "test") as! NSNumber?
             if let toRet =  value {
                 return toRet
             } else {
-                return NSNumber(float: 2000.0)
+                return NSNumber(value: 2000.0 as Float)
             }
         }
         
         set(newMaxColorieCount){
             
-            NSUserDefaults.standardUserDefaults().setValue(newMaxColorieCount, forKey: "test")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.setValue(newMaxColorieCount, forKey: "test")
+            UserDefaults.standard.synchronize()
         }
     }
     
-    var freshStart : NSDate {
+    var freshStart : Date {
         
         get {
-            let value = NSUserDefaults.standardUserDefaults().valueForKey("freshStart")as! NSDate?
+            let value = UserDefaults.standard.value(forKey: "freshStart")as! Date?
             if let toRet =  value {
                 return toRet
             } else {
-                let date = NSDate()
-                NSUserDefaults.standardUserDefaults().setValue(date, forKey: "freshStart")
-                NSUserDefaults.standardUserDefaults().synchronize()
+                let date = Date()
+                UserDefaults.standard.setValue(date, forKey: "freshStart")
+                UserDefaults.standard.synchronize()
                 return date
             }
         }
         
         set(newFreshStart){
             
-            NSUserDefaults.standardUserDefaults().setValue(newFreshStart, forKey: "freshStart")
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.setValue(newFreshStart, forKey: "freshStart")
+            UserDefaults.standard.synchronize()
         }
     }
 }

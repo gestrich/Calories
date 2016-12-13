@@ -14,26 +14,26 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var updateButton: UIButton!
     
     
-    @IBAction func submitTapped(sender: UIButton) {
+    @IBAction func submitTapped(_ sender: UIButton) {
         if let intNumber = Int(self.calorieTextField.text!) {
-            let numberObj = NSNumber(integer: intNumber)
+            let numberObj = NSNumber(value: intNumber as Int)
             SettingsModel().maxCalorieCount = numberObj
-            NSUbiquitousKeyValueStore.defaultStore().setString("Value \(intNumber)", forKey: "max")
+            NSUbiquitousKeyValueStore.default().set("Value \(intNumber)", forKey: "max")
         }
         
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
         
     }
     
-    @IBAction func cancel(sender : AnyObject){
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func cancel(_ sender : AnyObject){
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let numberObj = SettingsModel().maxCalorieCount
         self.calorieTextField.text = "\(numberObj)"
-        self.updateButton.setTitleColor(ThemeKit.baseColor(), forState: UIControlState.Normal)
+        self.updateButton.setTitleColor(ThemeKit.baseColor(), for: UIControlState())
     
     }
 }

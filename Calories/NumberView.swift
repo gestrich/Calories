@@ -16,7 +16,7 @@ import UIKit
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
     }
     
     var numberValue : Int = 0 {
@@ -26,19 +26,19 @@ import UIKit
     }
 
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // Drawing code
         
         ThemeKit.baseColor().setFill()
-        let path = UIBezierPath(ovalInRect: self.bounds)
-        path.closePath()
+        let path = UIBezierPath(ovalIn: self.bounds)
+        path.close()
         path.fill()
         
-        let string = NSAttributedString(string: "\(numberValue)", attributes: [NSForegroundColorAttributeName:UIColor.whiteColor()])
+        let string = NSAttributedString(string: "\(numberValue)", attributes: [NSForegroundColorAttributeName:UIColor.white])
         
-        let xPos = CGRectGetMidX(self.bounds) - string.size().width/2
-        let yPos = CGRectGetMidY(self.bounds) - string.size().height/2
-        string.drawAtPoint(CGPointMake (xPos, yPos))
+        let xPos = self.bounds.midX - string.size().width/2
+        let yPos = self.bounds.midY - string.size().height/2
+        string.draw(at: CGPoint (x: xPos, y: yPos))
     }
     
     override func prepareForInterfaceBuilder() {

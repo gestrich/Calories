@@ -7,6 +7,30 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+//fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+//  switch (lhs, rhs) {
+//  case let (l?, r?):
+//    return l < r
+//  case (nil, _?):
+//    return true
+//  default:
+//    return false
+//  }
+//}
+//
+//// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+//// Consider refactoring the code to use the non-optional operators.
+//fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+//  switch (lhs, rhs) {
+//  case let (l?, r?):
+//    return l > r
+//  default:
+//    return rhs < lhs
+//  }
+//}
+
 
 class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, UITextFieldDelegate, NSFetchedResultsControllerDelegate {
     
@@ -22,9 +46,9 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
     var searchText : String?
     
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     
-    var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
+    var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController<NSFetchRequestResult>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,45 +60,45 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
-        tableView.registerNib(UINib(nibName: "CalorieDetailTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "DetailCell")
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.register(UINib(nibName: "CalorieDetailTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "DetailCell")
         
         fetchedResultsController = getFetchedResultsController()
         fetchedResultsController.delegate = self
         
         addCustomInputView()
         self.confirmationContainer.alpha = 0.0
-        self.addButton.hidden = true
+        self.addButton.isHidden = true
         
-        self.foodName.addTarget(self, action: Selector("foodTextChanged:"), forControlEvents:.EditingChanged)
-        self.calories.addTarget(self, action: Selector("foodTextChanged:"), forControlEvents:.EditingChanged)
+        self.foodName.addTarget(self, action: #selector(CalorieDetailViewController.foodTextChanged(_:)), for:.editingChanged)
+        self.calories.addTarget(self, action: #selector(CalorieDetailViewController.foodTextChanged(_:)), for:.editingChanged)
         
         definesPresentationContext = true // for issue http://stackoverflow.com/questions/25032798/uitableview-disappears-when-uisearchcontroller-is-active-and-a-new-tab-is-select
         
-        self.topContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dismissKeyboard:"))
+        self.topContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CalorieDetailViewController.dismissKeyboard(_:))))
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.refreshView()
         self.foodName.becomeFirstResponder()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
     
     func addCustomInputView(){
-        let toolbar = UIToolbar(frame: CGRectMake(0.0, 0.0, view.window?.frame.size.width ?? 100.0, 44.0))
-        toolbar.translucent = false
-        toolbar.tintColor = UIColor.blackColor()
-        toolbar.items = [UIBarButtonItem(title: "   ––", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("negativeTapped"))]
+        let toolbar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: view.window?.frame.size.width ?? 100.0, height: 44.0))
+        toolbar.isTranslucent = false
+        toolbar.tintColor = UIColor.black
+        toolbar.items = [UIBarButtonItem(title: "   ––", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalorieDetailViewController.negativeTapped))]
         self.calories?.inputAccessoryView = toolbar
     }
     
     func negativeTapped(){
         if let text = calories?.text {
             if text.hasPrefix("-"){
-                calories?.text = text.stringByReplacingOccurrencesOfString("-", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range:nil)
+                calories?.text = text.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.caseInsensitive, range:nil)
             } else {
                 calories?.text = "-" + text
             }
@@ -83,7 +107,7 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     
-    @IBAction func done(sender : AnyObject){
+    @IBAction func done(_ sender : AnyObject){
         let thisFood = createFood()
         self.refreshTextViews()
         foodName.becomeFirstResponder()
@@ -91,7 +115,7 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         self.refreshView()
     }
     
-    @IBAction func cancel(sender : AnyObject){
+    @IBAction func cancel(_ sender : AnyObject){
         dismissViewController()
     }
     
@@ -101,29 +125,29 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         self.searchText = ""
     }
     
-    func dismissKeyboard(sender : AnyObject){
+    func dismissKeyboard(_ sender : AnyObject){
         calories?.endEditing(true)
         foodName.endEditing(true)
     }
     
     func dismissViewController(){
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewController(animated: true)
     }
     
     func createFood() -> Food {
-        let entityDescription = NSEntityDescription.entityForName("Food", inManagedObjectContext: managedObjectContext!)
+        let entityDescription = NSEntityDescription.entity(forEntityName: "Food", in: managedObjectContext!)
         var thisFood : Food
         if food != nil {
             thisFood = food!
         } else {
-            thisFood = Food(entity:entityDescription!, insertIntoManagedObjectContext:managedObjectContext)
+            thisFood = Food(entity:entityDescription!, insertInto:managedObjectContext)
         }
         
         thisFood.name = foodName?.text
         if let calories = calories {
             let caloriesDouble = NSString(string:calories.text!).doubleValue
-            thisFood.calories = caloriesDouble
-            thisFood.created = NSDate()
+            thisFood.calories = caloriesDouble as NSNumber!
+            thisFood.created = Date()
             do {
                 try managedObjectContext?.save()
             } catch _ {
@@ -133,7 +157,7 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         return thisFood
     }
     
-    func foodTextChanged(sender:UITextField){
+    func foodTextChanged(_ sender:UITextField){
         if sender == self.foodName {
             self.searchText = sender.text
         }
@@ -144,9 +168,9 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
     
     
     //UITableViewDataSource Delegate
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCellWithIdentifier("DetailCell") as! CalorieDetailTableViewCell
-        let food = fetchedResultsController.objectAtIndexPath(indexPath) as! Food
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as! CalorieDetailTableViewCell
+        let food = fetchedResultsController.object(at: indexPath) as! Food
         cell.textLabel?.text = food.name
         cell.detailTextLabel?.text = food.calories.stringValue
         cell.accessoryView = UIImageView(image: UIImage(named: "plus"))
@@ -154,7 +178,7 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = fetchedResultsController.sections {
             let sectionsArray = sections as Array
             return sectionsArray.count
@@ -162,7 +186,7 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         return 0
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = fetchedResultsController.sections {
             
             return sections[section].numberOfObjects
@@ -171,16 +195,16 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         return 0
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let oldFood = fetchedResultsController.objectAtIndexPath(indexPath) as! Food
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let oldFood = fetchedResultsController.object(at: indexPath) as! Food
         
-        let entityDescription = NSEntityDescription.entityForName("Food", inManagedObjectContext: managedObjectContext!)
-        let newFood = Food(entity:entityDescription!, insertIntoManagedObjectContext:managedObjectContext)
+        let entityDescription = NSEntityDescription.entity(forEntityName: "Food", in: managedObjectContext!)
+        let newFood = Food(entity:entityDescription!, insertInto:managedObjectContext)
         
         newFood.name = oldFood.name
         newFood.calories = oldFood.calories
-        newFood.created = NSDate()
+        newFood.created = Date()
         do {
             try managedObjectContext?.save()
         } catch _ {
@@ -193,33 +217,33 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         self.refreshView()
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sectionTitle: AnyObject? = fetchedResultsController.sections?[section]
         return sectionTitle?.name
     }
     
     //UIScrollViewDelegate
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.dismissKeyboard(self)
     }
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         //refreshView()
     }
     
-    func getFetchedResultsController()->NSFetchedResultsController{
+    func getFetchedResultsController()->NSFetchedResultsController<NSFetchRequestResult>{
         fetchedResultsController = NSFetchedResultsController(fetchRequest: foodFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: "presentableDate", cacheName: nil)
         return fetchedResultsController
         
     }
     
-    func updateFetchRequest(fetchRequest:NSFetchRequest) -> Void {
+    func updateFetchRequest(_ fetchRequest:NSFetchRequest<NSFetchRequestResult>) -> Void {
         let sortDescriptor = NSSortDescriptor(key: "created", ascending: false)
-        let interval = NSTimeInterval(-60*60*24*14)
-        let date = NSDate(timeInterval: interval, sinceDate: NSDate())
+        let interval = TimeInterval(-60*60*24*14)
+        let date = Date(timeInterval: interval, since: Date())
         let predicate : NSPredicate
         let foodText = self.foodName.text
-        if foodText != nil && foodText?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) != 0 {
+        if foodText != nil && foodText?.lengthOfBytes(using: String.Encoding.utf8) != 0 {
             
             predicate = NSPredicate(format: "created > %@ AND name BEGINSWITH[cd] %@", argumentArray: [date, "\(foodText!)"])
         } else {
@@ -230,8 +254,8 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
-    func foodFetchRequest()-> NSFetchRequest {
-        let fetchRequest =  NSFetchRequest(entityName: "Food")
+    func foodFetchRequest()-> NSFetchRequest<NSFetchRequestResult> {
+        let fetchRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Food")
         updateFetchRequest(fetchRequest)
         return fetchRequest
     }
@@ -243,23 +267,25 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         } catch _ {
         }
         tableView.reloadData()
-        if self.foodName.text?.characters.count > 0 && self.calories?.text?.characters.count > 0 {
-            self.addButton.hidden = false
+        let foodLetterCount = self.foodName.text?.characters.count ?? 0
+        let caloriesLetterCount = self.calories?.text?.characters.count ?? 0
+        if foodLetterCount > 0 && caloriesLetterCount > 0 {
+            self.addButton.isHidden = false
         } else {
-            self.addButton.hidden = true
+            self.addButton.isHidden = true
         }
     }
     
-    func animateLabel(food : Food){
-        self.confirmationLabel.text = " \(food.name) \(food.calories) calories"
+    func animateLabel(_ food : Food){
+        self.confirmationLabel.text = " \(food.name!) \(food.calories!) calories"
         
         self.confirmationContainer.alpha = 0.0
-        UIView.animateWithDuration(0.2, animations: { () -> Void in
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
             self.confirmationContainer.alpha = 1.0
-            }) { (Bool) -> Void in
-                UIView.animateWithDuration(2.0, animations: { () -> Void in
+            }, completion: { (Bool) -> Void in
+                UIView.animate(withDuration: 2.0, animations: { () -> Void in
                     self.confirmationContainer.alpha = 0.0
                 })
-        }
+        }) 
     }
 }
