@@ -60,16 +60,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Calories" id="VC8-QJ-Ohl">
-                        <barButtonItem key="leftBarButtonItem" image="gear" style="plain" id="xmJ-6x-GVI">
+                        <barButtonItem key="leftBarButtonItem" image="gear" id="xmJ-6x-GVI">
                             <color key="tintColor" red="0.4823529411764706" green="0.68235294117647061" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="GIf-R7-OZL" kind="push" id="0OH-ED-QDO"/>
+                                <segue destination="GIf-R7-OZL" kind="show" id="0OH-ED-QDO"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="plus" style="plain" id="Pmi-43-5ty">
+                        <barButtonItem key="rightBarButtonItem" image="plus" id="Pmi-43-5ty">
                             <color key="tintColor" red="0.4823529411764706" green="0.68235294117647061" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="Yzi-k0-770" kind="push" id="bJh-LU-aMz"/>
+                                <segue destination="Yzi-k0-770" kind="show" id="bJh-LU-aMz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -91,15 +91,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B30-Y5-27a">
-                                <rect key="frame" x="275" y="311" width="51" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B30-Y5-27a">
+                                <rect key="frame" x="162" y="311" width="51" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
                                     <action selector="submitTapped:" destination="GIf-R7-OZL" eventType="touchUpInside" id="yF1-s2-kcc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What is your daily calorie goal?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMw-e9-qXM" userLabel="Description">
-                                <rect key="frame" x="175" y="114" width="250" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your daily calorie goal?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMw-e9-qXM" userLabel="Description">
+                                <rect key="frame" x="62.5" y="114" width="250" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="G4l-Xl-wXW"/>
                                     <constraint firstAttribute="height" constant="21" id="xY5-lZ-6XQ"/>
@@ -108,8 +108,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calorie Limit" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tW8-Yd-zay">
-                                <rect key="frame" x="249" y="206" width="102" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calorie Limit" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tW8-Yd-zay">
+                                <rect key="frame" x="136.5" y="206" width="102" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -135,7 +135,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="7Uo-TA-4Wh">
-                        <barButtonItem key="leftBarButtonItem" image="left_arrow" style="plain" id="qix-bW-vw5">
+                        <barButtonItem key="leftBarButtonItem" image="left_arrow" id="qix-bW-vw5">
                             <color key="tintColor" red="0.41960784309999999" green="0.61568627450000002" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="GIf-R7-OZL" id="8Td-FF-w7j"/>
@@ -163,21 +163,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ElI-co-owt">
-                                <rect key="frame" x="0.0" y="64" width="600" height="233"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElI-co-owt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="233"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Food Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ymi-bc-fl4" customClass="TextView" customModule="Calorie_Log" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="45" width="560" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Food Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ymi-bc-fl4" customClass="TextView" customModule="Calorie_Log" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="45" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calories" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-zQ-Jgi" customClass="TextView" customModule="Calorie_Log" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="102" width="560" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calories" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-zQ-Jgi" customClass="TextView" customModule="Calorie_Log" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="102" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ws4-hn-MHo" userLabel="Text Container">
-                                        <rect key="frame" x="244" y="144" width="112" height="25"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ws4-hn-MHo" userLabel="Text Container">
+                                        <rect key="frame" x="131.5" y="144" width="112" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JZ-1A-cLL">
                                                 <rect key="frame" x="50" y="2" width="42" height="21"/>
@@ -216,8 +216,8 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erb-in-sD8">
-                                        <rect key="frame" x="254" y="140" width="92" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erb-in-sD8">
+                                        <rect key="frame" x="141.5" y="140" width="92" height="34"/>
                                         <state key="normal" title="Add To Log">
                                             <color key="titleColor" red="0.4823529412" green="0.68235294120000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -251,8 +251,8 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yud-4B-aFl">
-                                <rect key="frame" x="0.0" y="246" width="600" height="310"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yud-4B-aFl">
+                                <rect key="frame" x="0.0" y="246" width="375" height="377"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="bJm-Ze-D2a"/>
@@ -295,7 +295,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add" id="0VV-pK-yMn" userLabel="Detail">
-                        <barButtonItem key="leftBarButtonItem" image="left_arrow" style="plain" id="Vxl-dF-XF7">
+                        <barButtonItem key="leftBarButtonItem" image="left_arrow" id="Vxl-dF-XF7">
                             <color key="tintColor" red="0.41960784313725491" green="0.61568627450980395" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="Yzi-k0-770" id="xBE-NG-mZO"/>

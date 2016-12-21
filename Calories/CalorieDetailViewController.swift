@@ -131,7 +131,10 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func dismissViewController(){
-        navigationController?.popViewController(animated: true)
+        if(navigationController?.popViewController(animated: true) == nil){
+            NSLog("Error popping view controller");
+        }
+        
     }
     
     func createFood() -> Food {
