@@ -51,7 +51,7 @@ class CalorieListViewController: UITableViewController, NSFetchedResultsControll
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemeKit.titleColor(), NSFontAttributeName :  UIFont.systemFont(ofSize: 26.0) ]
+        navigationController?.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue : ThemeKit.titleColor(), NSAttributedString.Key.font.rawValue :  UIFont.systemFont(ofSize: 26.0) ])
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         refreshView()
@@ -151,7 +151,7 @@ class CalorieListViewController: UITableViewController, NSFetchedResultsControll
         
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let managedObject:NSManagedObject = fetchedResultsController.object(at: indexPath) as! NSManagedObject
         DispatchQueue.main.async(execute: { () -> Void in
             self.managedObjectContext?.delete(managedObject)
@@ -199,3 +199,9 @@ class CalorieListViewController: UITableViewController, NSFetchedResultsControll
     
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}

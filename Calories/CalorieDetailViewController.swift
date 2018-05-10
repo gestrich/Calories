@@ -91,11 +91,11 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         let toolbar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: view.window?.frame.size.width ?? 100.0, height: 44.0))
         toolbar.isTranslucent = false
         toolbar.tintColor = UIColor.black
-        toolbar.items = [UIBarButtonItem(title: "   ––", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CalorieDetailViewController.negativeTapped))]
+        toolbar.items = [UIBarButtonItem(title: "   ––", style: UIBarButtonItem.Style.plain, target: self, action: #selector(CalorieDetailViewController.negativeTapped))]
         self.calories?.inputAccessoryView = toolbar
     }
     
-    func negativeTapped(){
+    @objc func negativeTapped(){
         if let text = calories?.text {
             if text.hasPrefix("-"){
                 calories?.text = text.replacingOccurrences(of: "-", with: "", options: NSString.CompareOptions.caseInsensitive, range:nil)
@@ -125,7 +125,7 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         self.searchText = ""
     }
     
-    func dismissKeyboard(_ sender : AnyObject){
+    @objc func dismissKeyboard(_ sender : AnyObject){
         calories?.endEditing(true)
         foodName.endEditing(true)
     }
@@ -149,8 +149,8 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         
         thisFood.name = foodName?.text
         if let calories = calories {
-            let caloriesDouble = NSString(string:calories.text!).doubleValue
-            thisFood.calories = caloriesDouble as NSNumber!
+            let caloriesDouble = NSString(string:calories.text ?? "").doubleValue
+            thisFood.calories = NSNumber(value:caloriesDouble)
             thisFood.created = Date()
             do {
                 try managedObjectContext?.save()
@@ -161,7 +161,7 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         return thisFood
     }
     
-    func foodTextChanged(_ sender:UITextField){
+    @objc func foodTextChanged(_ sender:UITextField){
         if sender == self.foodName {
             self.searchText = sender.text
         }
@@ -271,8 +271,8 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         } catch _ {
         }
         tableView.reloadData()
-        let foodLetterCount = self.foodName.text?.characters.count ?? 0
-        let caloriesLetterCount = self.calories?.text?.characters.count ?? 0
+        let foodLetterCount = self.foodName.text?.count ?? 0
+        let caloriesLetterCount = self.calories?.text?.count ?? 0
         if foodLetterCount > 0 && caloriesLetterCount > 0 {
             self.addButton.isHidden = false
         } else {

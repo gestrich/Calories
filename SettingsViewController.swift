@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController {
         if let intNumber = Int(self.calorieTextField.text!) {
             let numberObj = NSNumber(value: intNumber as Int)
             SettingsModel().maxCalorieCount = numberObj
-            NSUbiquitousKeyValueStore.default().set("Value \(intNumber)", forKey: "max")
+            NSUbiquitousKeyValueStore.default.set("Value \(intNumber)", forKey: "max")
         }
         
         self.navigationController?.popViewController(animated: true)
@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         let numberObj = SettingsModel().maxCalorieCount
         self.calorieTextField.text = "\(numberObj)"
-        self.updateButton.setTitleColor(ThemeKit.baseColor(), for: UIControlState())
+        self.updateButton.setTitleColor(ThemeKit.baseColor(), for: UIControl.State())
     
     }
 }

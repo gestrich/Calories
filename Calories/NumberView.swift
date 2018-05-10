@@ -34,7 +34,7 @@ import UIKit
         path.close()
         path.fill()
         
-        let string = NSAttributedString(string: "\(numberValue)", attributes: [NSForegroundColorAttributeName:UIColor.white])
+        let string = NSAttributedString(string: "\(numberValue)", attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor):UIColor.white]))
         
         let xPos = self.bounds.midX - string.size().width/2
         let yPos = self.bounds.midY - string.size().height/2
@@ -46,3 +46,14 @@ import UIKit
     }
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
+}
