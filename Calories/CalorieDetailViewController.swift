@@ -61,7 +61,7 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        tableView.register(UINib(nibName: "CalorieDetailTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "DetailCell")
+        tableView.register(UINib(nibName: "CalorieTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "CalorieCell")
         
         fetchedResultsController = getFetchedResultsController()
         fetchedResultsController.delegate = self
@@ -173,10 +173,10 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
     
     //UITableViewDataSource Delegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as! CalorieDetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CalorieCell") as! CalorieTableViewCell
         let food = fetchedResultsController.object(at: indexPath) as! Food
-        cell.textLabel?.text = food.name
-        cell.detailTextLabel?.text = food.calories.stringValue
+        cell.calorieLabel.text = food.name
+        cell.numberView.numberValue = food.calories.intValue
         cell.accessoryView = UIImageView(image: UIImage(named: "plus"))
         
         return cell

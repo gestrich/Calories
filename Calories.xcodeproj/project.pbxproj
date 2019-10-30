@@ -24,8 +24,6 @@
 		A9BB61761A4DCD6700E4731B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9BB61741A4DCD6700E4731B /* LaunchScreen.xib */; };
 		A9BB61821A4DCD6700E4731B /* CaloriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB61811A4DCD6700E4731B /* CaloriesTests.swift */; };
 		A9BB618C1A4DDDEE00E4731B /* CalorieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB618B1A4DDDEE00E4731B /* CalorieDetailViewController.swift */; };
-		A9C9CFB51C3415030010CBDE /* CalorieDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C9CFB31C3415030010CBDE /* CalorieDetailTableViewCell.swift */; };
-		A9C9CFB61C3415030010CBDE /* CalorieDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C9CFB41C3415030010CBDE /* CalorieDetailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +64,6 @@
 		A9BB61811A4DCD6700E4731B /* CaloriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesTests.swift; sourceTree = "<group>"; };
 		A9BB618B1A4DDDEE00E4731B /* CalorieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieDetailViewController.swift; sourceTree = "<group>"; };
 		A9BB61921A4DE61000E4731B /* Calories-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calories-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		A9C9CFB31C3415030010CBDE /* CalorieDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieDetailTableViewCell.swift; sourceTree = "<group>"; };
-		A9C9CFB41C3415030010CBDE /* CalorieDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalorieDetailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +92,6 @@
 				A964B06F1BF1969B007686F5 /* NumberView.swift */,
 				A92D5FC11BFAE1B900B028D4 /* CalorieTableViewCell.swift */,
 				A92D5FC31BFAE1E600B028D4 /* CalorieTableViewCell.xib */,
-				A9C9CFB31C3415030010CBDE /* CalorieDetailTableViewCell.swift */,
-				A9C9CFB41C3415030010CBDE /* CalorieDetailTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -235,7 +229,7 @@
 				TargetAttributes = {
 					A9BB61621A4DCD6700E4731B = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 5K844XFC6W;
+						DevelopmentTeam = 84GLJ7PWT5;
 						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.iCloud = {
@@ -255,6 +249,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -278,7 +273,6 @@
 				A9BB61761A4DCD6700E4731B /* LaunchScreen.xib in Resources */,
 				A93F9F991ABBE51200B547DB /* Plan in Resources */,
 				A9BB61731A4DCD6700E4731B /* Images.xcassets in Resources */,
-				A9C9CFB61C3415030010CBDE /* CalorieDetailTableViewCell.xib in Resources */,
 				A92D5FC41BFAE1E600B028D4 /* CalorieTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +299,6 @@
 				A9BB61691A4DCD6700E4731B /* AppDelegate.swift in Sources */,
 				A96F683C1AD3787200735CE1 /* Food+AdditionalMethods.m in Sources */,
 				A9BB616C1A4DCD6700E4731B /* Calories.xcdatamodeld in Sources */,
-				A9C9CFB51C3415030010CBDE /* CalorieDetailTableViewCell.swift in Sources */,
 				A9BB618C1A4DDDEE00E4731B /* CalorieDetailViewController.swift in Sources */,
 				A961274D1A4F1B530037BA46 /* SettingsModel.swift in Sources */,
 				A92D5FC21BFAE1B900B028D4 /* CalorieTableViewCell.swift in Sources */,
@@ -461,6 +454,7 @@
 				CODE_SIGN_ENTITLEMENTS = Calories/Calories.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 84GLJ7PWT5;
 				INFOPLIST_FILE = Calories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -483,6 +477,7 @@
 				CODE_SIGN_ENTITLEMENTS = Calories/Calories.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 84GLJ7PWT5;
 				INFOPLIST_FILE = Calories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
