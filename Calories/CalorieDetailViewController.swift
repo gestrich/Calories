@@ -221,9 +221,18 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
         self.refreshView()
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sectionTitle: AnyObject? = fetchedResultsController.sections?[section]
-        return sectionTitle?.name
+    func tableView(_ tableView: UITableView, titleForHeaderInSection sectionIndex: Int) -> String? {
+
+        var sectionCalorieCount = 0
+        if let sections = fetchedResultsController.sections {
+            for rowIndex in 0..<sections[sectionIndex].numberOfObjects {
+                let indexPath = IndexPath.init(row: rowIndex, section: sectionIndex)
+                let food =  fetchedResultsController.object(at: indexPath) as! Food
+                sectionCalorieCount += food.calories.intValue
+            }
+        }
+        let sectionTitle: AnyObject? = fetchedResultsController.sections?[sectionIndex]
+        return (sectionTitle?.name ?? "") + "   (\(sectionCalorieCount) cals)"
     }
     
     //UIScrollViewDelegate

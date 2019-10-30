@@ -13,7 +13,7 @@
 -(NSString *)presentableDate{
     static NSDateFormatter *formatter;
     formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateStyle:NSDateFormatterFullStyle];
+    [formatter setDateFormat:@"E, MMM d"];
     return [formatter stringFromDate:self.created];
 }
 
