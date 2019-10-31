@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,11 +13,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="new-9J-Lxd" id="4MJ-7G-IQK">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U5v-67-1cY" customClass="NumberView" customModule="Calorie_Log" customModuleProvider="target">
-                        <rect key="frame" x="21" y="7" width="40" height="30"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U5v-67-1cY" customClass="NumberView" customModule="Calorie_Log" customModuleProvider="target">
+                        <rect key="frame" x="16" y="7" width="40" height="30"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="8pg-Ph-nKd"/>
@@ -27,20 +25,20 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTe-aZ-Znc">
-                        <rect key="frame" x="69" y="11.5" width="83" height="21"/>
+                        <rect key="frame" x="67" y="11.5" width="83" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="WTe-aZ-Znc" firstAttribute="leading" secondItem="U5v-67-1cY" secondAttribute="trailing" constant="8" symbolic="YES" id="5Bc-Y7-2Ky"/>
+                    <constraint firstItem="WTe-aZ-Znc" firstAttribute="leading" secondItem="U5v-67-1cY" secondAttribute="trailing" constant="12" id="5Bc-Y7-2Ky"/>
                     <constraint firstItem="WTe-aZ-Znc" firstAttribute="bottom" secondItem="4MJ-7G-IQK" secondAttribute="bottomMargin" id="D11-31-r0L"/>
                     <constraint firstItem="U5v-67-1cY" firstAttribute="top" secondItem="4MJ-7G-IQK" secondAttribute="topMargin" constant="5" id="Das-2G-ub6"/>
                     <constraint firstItem="WTe-aZ-Znc" firstAttribute="centerY" secondItem="4MJ-7G-IQK" secondAttribute="centerY" id="IBV-d7-041"/>
                     <constraint firstItem="WTe-aZ-Znc" firstAttribute="leading" secondItem="4MJ-7G-IQK" secondAttribute="leading" constant="71" id="Ixu-o1-M3y"/>
                     <constraint firstItem="U5v-67-1cY" firstAttribute="centerY" secondItem="4MJ-7G-IQK" secondAttribute="centerY" id="eef-ds-bid"/>
-                    <constraint firstItem="U5v-67-1cY" firstAttribute="leading" secondItem="4MJ-7G-IQK" secondAttribute="leadingMargin" constant="5" id="qmP-gv-gyw"/>
+                    <constraint firstItem="U5v-67-1cY" firstAttribute="leading" secondItem="4MJ-7G-IQK" secondAttribute="leadingMargin" id="qmP-gv-gyw"/>
                     <constraint firstItem="WTe-aZ-Znc" firstAttribute="leading" secondItem="U5v-67-1cY" secondAttribute="trailing" constant="15" id="ur3-US-jYO"/>
                 </constraints>
                 <variation key="default">

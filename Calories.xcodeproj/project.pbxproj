@@ -229,11 +229,11 @@
 				TargetAttributes = {
 					A9BB61621A4DCD6700E4731B = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 84GLJ7PWT5;
+						DevelopmentTeam = 5K844XFC6W;
 						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -454,10 +454,12 @@
 				CODE_SIGN_ENTITLEMENTS = Calories/Calories.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 84GLJ7PWT5;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 5K844XFC6W;
 				INFOPLIST_FILE = Calories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.gestrich.calorie-log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -477,10 +479,12 @@
 				CODE_SIGN_ENTITLEMENTS = Calories/Calories.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 84GLJ7PWT5;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = 5K844XFC6W;
 				INFOPLIST_FILE = Calories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.gestrich.calorie-log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
