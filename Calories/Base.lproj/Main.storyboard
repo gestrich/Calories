@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PqP-tI-etC">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,9 +11,9 @@
             <objects>
                 <tableViewController id="Vdn-Ye-sNI" userLabel="Calories List View Controller" customClass="CalorieListViewController" customModule="Calorie_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="O1b-Uy-7h1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="2Wc-uF-e8b" style="IBUITableViewCellStyleDefault" id="Dx4-Tk-hVg">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -86,33 +85,33 @@
                         <viewControllerLayoutGuide type="bottom" id="DSp-LR-vYP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ngu-ma-YkP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your daily calorie goal?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMw-e9-qXM" userLabel="Description">
-                                <rect key="frame" x="62.5" y="94" width="250" height="21"/>
+                                <rect key="frame" x="62.5" y="50" width="250" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="G4l-Xl-wXW"/>
                                     <constraint firstAttribute="height" constant="21" id="xY5-lZ-6XQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Calorie Limit" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tW8-Yd-zay">
-                                <rect key="frame" x="133.5" y="186" width="108.5" height="34"/>
+                                <rect key="frame" x="133.5" y="142" width="108.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B30-Y5-27a">
-                                <rect key="frame" x="162" y="228" width="51" height="30"/>
+                                <rect key="frame" x="162" y="184" width="51" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
                                     <action selector="submitTapped:" destination="GIf-R7-OZL" eventType="touchUpInside" id="yF1-s2-kcc"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="VMw-e9-qXM" firstAttribute="centerX" secondItem="ngu-ma-YkP" secondAttribute="centerX" id="DMc-Ep-ski"/>
                             <constraint firstItem="tW8-Yd-zay" firstAttribute="top" secondItem="VMw-e9-qXM" secondAttribute="bottom" constant="71" id="EbJ-34-SKW"/>
@@ -158,11 +157,11 @@
                         <viewControllerLayoutGuide type="bottom" id="UoF-Kt-w1c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AYa-yg-WwA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElI-co-owt">
-                                <rect key="frame" x="0.0" y="44" width="375" height="233"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Food Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ymi-bc-fl4">
                                         <rect key="frame" x="20" y="45" width="335" height="34"/>
@@ -224,7 +223,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ws4-hn-MHo" firstAttribute="leading" secondItem="ElI-co-owt" secondAttribute="leading" constant="173" id="0Q3-vM-dOc"/>
                                     <constraint firstItem="ws4-hn-MHo" firstAttribute="centerX" secondItem="ElI-co-owt" secondAttribute="centerX" id="47C-gt-2js"/>
@@ -250,8 +248,8 @@
                                 </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yud-4B-aFl">
-                                <rect key="frame" x="0.0" y="234" width="375" height="384"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="190" width="375" height="384"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="bJm-Ze-D2a"/>
                                 </constraints>
@@ -262,7 +260,7 @@
                                 </variation>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="yud-4B-aFl" secondAttribute="trailing" id="1x8-0S-9bL"/>
                             <constraint firstItem="UoF-Kt-w1c" firstAttribute="top" secondItem="yud-4B-aFl" secondAttribute="bottom" id="A2C-gI-DjT"/>
@@ -321,10 +319,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PqP-tI-etC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Log" image="log_icon" id="iKL-L8-1H0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a2o-DM-D0y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="a2o-DM-D0y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="0.0"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

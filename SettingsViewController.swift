@@ -34,6 +34,5 @@ class SettingsViewController: UIViewController {
         let numberObj = SettingsModel().maxCalorieCount
         self.calorieTextField.text = "\(numberObj)"
         self.updateButton.setTitleColor(ThemeKit.baseColor(), for: UIControl.State())
-    
     }
 }

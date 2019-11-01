@@ -90,9 +90,9 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
     func addCustomInputView(){
         let toolbar = UIToolbar(frame: CGRect(x: 0.0, y: 0.0, width: view.window?.frame.size.width ?? 100.0, height: 44.0))
         toolbar.isTranslucent = false
-        toolbar.tintColor = UIColor.black
-        toolbar.items = [UIBarButtonItem(title: "   ––", style: UIBarButtonItem.Style.plain, target: self, action: #selector(CalorieDetailViewController.negativeTapped))]
+        toolbar.items = [UIBarButtonItem(title: "   ––", style: UIBarButtonItem.Style.done, target: self, action: #selector(CalorieDetailViewController.negativeTapped))]
         self.calories?.inputAccessoryView = toolbar
+        self.updateThemeColors()
     }
     
     @objc func negativeTapped(){
@@ -102,6 +102,20 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
             } else {
                 calories?.text = "-" + text
             }
+        }
+        
+    }
+    
+    func updateThemeColors(){
+        
+        guard let toolbar = self.calories.inputAccessoryView as? UIToolbar else {
+            return
+        }
+        
+        if self.traitCollection.userInterfaceStyle == .dark {
+            toolbar.tintColor = UIColor.white
+        } else {
+            toolbar.tintColor = UIColor.black
         }
         
     }
@@ -301,4 +315,14 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
                 })
         }) 
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        // Trait collection has already changed
+        self.updateThemeColors()
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        // Trait collection will change. Use this one so you know what the state is changing to.
+    }
+    
 }

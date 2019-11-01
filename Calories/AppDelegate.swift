@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let settings = UIUserNotificationSettings(types: UIUserNotificationType.badge, categories: nil)
         UIApplication.shared.registerUserNotificationSettings(settings)
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+        //UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
         
         UINavigationBar.appearance().tintColor = ThemeKit.baseColor()
         
