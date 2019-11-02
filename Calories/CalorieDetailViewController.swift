@@ -245,8 +245,15 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
                 sectionCalorieCount += food.calories.intValue
             }
         }
-        let sectionTitle: AnyObject? = fetchedResultsController.sections?[sectionIndex]
-        return (sectionTitle?.name ?? "") + "   (\(sectionCalorieCount) cals)"
+        
+        var dateName = ""
+        if sectionIndex == 0 {
+            dateName = "Today"
+        } else if let formattedDate = fetchedResultsController.sections?[sectionIndex].name {
+            dateName = formattedDate
+        }
+        
+        return dateName + "   (\(sectionCalorieCount) cals)"
     }
     
     //UIScrollViewDelegate
