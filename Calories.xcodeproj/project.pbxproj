@@ -21,9 +21,9 @@
 		A9BB616E1A4DCD6700E4731B /* CalorieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB616D1A4DCD6700E4731B /* CalorieListViewController.swift */; };
 		A9BB61711A4DCD6700E4731B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BB616F1A4DCD6700E4731B /* Main.storyboard */; };
 		A9BB61731A4DCD6700E4731B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BB61721A4DCD6700E4731B /* Images.xcassets */; };
-		A9BB61761A4DCD6700E4731B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9BB61741A4DCD6700E4731B /* LaunchScreen.xib */; };
 		A9BB61821A4DCD6700E4731B /* CaloriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB61811A4DCD6700E4731B /* CaloriesTests.swift */; };
 		A9BB618C1A4DDDEE00E4731B /* CalorieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB618B1A4DDDEE00E4731B /* CalorieDetailViewController.swift */; };
+		A9FC9C562373560B00717437 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9FC9C552373560B00717437 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +58,12 @@
 		A9BB616D1A4DCD6700E4731B /* CalorieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieListViewController.swift; sourceTree = "<group>"; };
 		A9BB61701A4DCD6700E4731B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9BB61721A4DCD6700E4731B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A9BB61751A4DCD6700E4731B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A9BB617B1A4DCD6700E4731B /* CaloriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaloriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BB61801A4DCD6700E4731B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9BB61811A4DCD6700E4731B /* CaloriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesTests.swift; sourceTree = "<group>"; };
 		A9BB618B1A4DDDEE00E4731B /* CalorieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieDetailViewController.swift; sourceTree = "<group>"; };
 		A9BB61921A4DE61000E4731B /* Calories-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calories-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		A9FC9C552373560B00717437 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				A9BB616F1A4DCD6700E4731B /* Main.storyboard */,
+				A9FC9C552373560B00717437 /* LaunchScreen.storyboard */,
 				A964B0711BF19776007686F5 /* ThemeKit.swift */,
 				A964B06F1BF1969B007686F5 /* NumberView.swift */,
 				A92D5FC11BFAE1B900B028D4 /* CalorieTableViewCell.swift */,
@@ -147,7 +148,6 @@
 				A90CDD911A5D08CE00544B04 /* Views */,
 				A93B49C51A5247A60019A296 /* Model */,
 				A9BB61721A4DCD6700E4731B /* Images.xcassets */,
-				A9BB61741A4DCD6700E4731B /* LaunchScreen.xib */,
 				A9BB61921A4DE61000E4731B /* Calories-Bridging-Header.h */,
 				A9BB61661A4DCD6700E4731B /* Supporting Files */,
 			);
@@ -270,9 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9BB61711A4DCD6700E4731B /* Main.storyboard in Resources */,
-				A9BB61761A4DCD6700E4731B /* LaunchScreen.xib in Resources */,
 				A93F9F991ABBE51200B547DB /* Plan in Resources */,
 				A9BB61731A4DCD6700E4731B /* Images.xcassets in Resources */,
+				A9FC9C562373560B00717437 /* LaunchScreen.storyboard in Resources */,
 				A92D5FC41BFAE1E600B028D4 /* CalorieTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,14 +330,6 @@
 				A9BB61701A4DCD6700E4731B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A9BB61741A4DCD6700E4731B /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9BB61751A4DCD6700E4731B /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
