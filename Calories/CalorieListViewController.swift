@@ -124,7 +124,7 @@ class CalorieListViewController: UITableViewController, NSFetchedResultsControll
         
         let calsUsed = NSNumber(value: calories as Double).intValue
         let maxCals = SettingsModel().maxCalorieCount.intValue
-        self.navigationItem.title = "\(calsUsed) / \(maxCals - calsUsed)"
+        self.navigationItem.title = "\(maxCals - calsUsed)"
     }
     
     
