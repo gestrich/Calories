@@ -238,16 +238,20 @@ class CalorieDetailViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, titleForHeaderInSection sectionIndex: Int) -> String? {
 
         var sectionCalorieCount = 0
+        var allFromToday = true
         if let sections = fetchedResultsController.sections {
             for rowIndex in 0..<sections[sectionIndex].numberOfObjects {
                 let indexPath = IndexPath.init(row: rowIndex, section: sectionIndex)
                 let food =  fetchedResultsController.object(at: indexPath) as! Food
                 sectionCalorieCount += food.calories.intValue
+                if !CalorieAppModel.todaysLogIncludesDate(dateToCheck: food.created) {
+                    allFromToday = false
+                }
             }
         }
         
         var dateName = ""
-        if sectionIndex == 0 {
+        if allFromToday == true {
             dateName = "Today"
         } else if let formattedDate = fetchedResultsController.sections?[sectionIndex].name {
             dateName = formattedDate

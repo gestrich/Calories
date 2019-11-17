@@ -165,28 +165,9 @@ class CalorieListViewController: UITableViewController, NSFetchedResultsControll
 
     func updateFetchRequest(_ fetchRequest:NSFetchRequest<NSFetchRequestResult>) -> Void {
         let sortDescriptor = NSSortDescriptor(key: "created", ascending: true)
-        let today = Date()
-        let gregorian = Calendar(identifier: Calendar.Identifier.gregorian)
-
-        var todayComponents = (gregorian as NSCalendar?)?.components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day, NSCalendar.Unit.hour], from: today)
-    
-        let localStartHour = 3
-        if (gregorian.timeZone.isDaylightSavingTime(for: today) != false) {
-            todayComponents?.hour = localStartHour
-        } else {
-            todayComponents?.hour = localStartHour + 1
-        }
-        
-        if let todayComponents = todayComponents {
-            var startDate = gregorian.date(from: todayComponents)!
-            if startDate.timeIntervalSince1970 > Date().timeIntervalSince1970 {
-                //Start time in future, use yesterday's start hour
-                startDate = startDate.addingTimeInterval(-60*60*24)
-            }
-            let predicate = NSPredicate(format: "created > %@", argumentArray: [startDate])
-            fetchRequest.predicate = predicate
-            fetchRequest.sortDescriptors = [sortDescriptor]
-        }
+        let predicate = NSPredicate(format: "created > %@", argumentArray: [CalorieAppModel.startOfTodaysLog()])
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [sortDescriptor]
     }
     
     func foodFetchRequest()-> NSFetchRequest<NSFetchRequestResult> {
