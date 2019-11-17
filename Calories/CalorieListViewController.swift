@@ -48,13 +48,20 @@ class CalorieListViewController: UITableViewController, NSFetchedResultsControll
 
         let backItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backItem
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue : ThemeKit.titleColor(), NSAttributedString.Key.font.rawValue :  UIFont.systemFont(ofSize: 26.0) ])
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(CalorieListViewController.foregroundNotification(notification:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         refreshView()
+    }
+    
+    @objc func foregroundNotification(notification: Notification) {
+        self.refreshView()
     }
 
     
