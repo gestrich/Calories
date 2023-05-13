@@ -1,18 +1,17 @@
 //
-//  CalorieAppModel.swift
+//  Date+Utils.swift
 //  Calorie Log
 //
 //  Created by Bill Gestrich on 11/17/19.
 //  Copyright © 2019 Bill Gestrich. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class CalorieAppModel: NSObject {
+extension Date {
     
     static func startOfTodaysLog() -> Date {
         let today = Date()
-        let gregorian = Calendar(identifier: Calendar.Identifier.gregorian)
         
         let components = Set<Calendar.Component>([Calendar.Component.year, Calendar.Component.month, Calendar.Component.day, Calendar.Component.hour])
         var todayComponents = gregorian.dateComponents(components, from: today)
@@ -32,10 +31,12 @@ class CalorieAppModel: NSObject {
         return startDate
     }
     
-    static func todaysLogIncludesDate(dateToCheck : Date) -> Bool {
-        let startDate = CalorieAppModel.startOfTodaysLog()
+    static let gregorian: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+    
+    func includedInTodaysLog() -> Bool {
+        let startDate = Date.startOfTodaysLog()
         let endDate = startDate.addingTimeInterval(60*60*24)
-        if startDate.compare(dateToCheck) != .orderedDescending && endDate.compare(dateToCheck) == .orderedDescending {
+        if startDate.compare(self) != .orderedDescending && endDate.compare(self) == .orderedDescending {
             return true
         } else {
             return false

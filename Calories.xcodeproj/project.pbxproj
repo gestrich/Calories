@@ -7,24 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A92440EF1C001C1E0052A44D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92440EE1C001C1E0052A44D /* SettingsViewController.swift */; };
-		A92D5FC21BFAE1B900B028D4 /* CalorieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D5FC11BFAE1B900B028D4 /* CalorieTableViewCell.swift */; };
-		A92D5FC41BFAE1E600B028D4 /* CalorieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92D5FC31BFAE1E600B028D4 /* CalorieTableViewCell.xib */; };
-		A93F9F991ABBE51200B547DB /* Plan in Resources */ = {isa = PBXBuildFile; fileRef = A93F9F981ABBE51200B547DB /* Plan */; };
-		A961274D1A4F1B530037BA46 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961274C1A4F1B530037BA46 /* SettingsModel.swift */; };
-		A96127511A50756B0037BA46 /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = A96127501A50756B0037BA46 /* Food.m */; };
-		A964B0701BF1969B007686F5 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964B06F1BF1969B007686F5 /* NumberView.swift */; };
+		A93F591329FBCDD30065E8C2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F591229FBCDD30065E8C2 /* SettingsView.swift */; };
+		A961274D1A4F1B530037BA46 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961274C1A4F1B530037BA46 /* Settings.swift */; };
 		A964B0721BF19776007686F5 /* ThemeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A964B0711BF19776007686F5 /* ThemeKit.swift */; };
-		A96F683C1AD3787200735CE1 /* Food+AdditionalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F683B1AD3787200735CE1 /* Food+AdditionalMethods.m */; };
-		A9AB2566238171CF002496A1 /* CalorieAppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB2565238171CF002496A1 /* CalorieAppModel.swift */; };
-		A9BB61691A4DCD6700E4731B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB61681A4DCD6700E4731B /* AppDelegate.swift */; };
+		A96B90D729FC6DC800BA74AD /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B90D029FC6DC700BA74AD /* View+Extensions.swift */; };
+		A96B90D829FC6DC800BA74AD /* CalorieEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B90D129FC6DC700BA74AD /* CalorieEntryView.swift */; };
+		A96B90DA29FC6DC800BA74AD /* CalorieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B90D329FC6DC800BA74AD /* CalorieListView.swift */; };
+		A96B90DB29FC6DC800BA74AD /* CalorieRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B90D429FC6DC800BA74AD /* CalorieRowView.swift */; };
+		A96B90DC29FC6DC800BA74AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B90D529FC6DC800BA74AD /* ContentView.swift */; };
+		A96B90DE29FC6E8600BA74AD /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B90DD29FC6E8600BA74AD /* Food.swift */; };
+		A96B90E129FC782200BA74AD /* CaloriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B90E029FC782200BA74AD /* CaloriesApp.swift */; };
+		A96B90E929FD66FE00BA74AD /* Food+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B90E829FD66FE00BA74AD /* Food+UI.swift */; };
+		A98F442629F7382D0075885D /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F442529F7382D0075885D /* PersistenceManager.swift */; };
+		A999EC742A1023160090E69D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999EC732A1023160090E69D /* SceneDelegate.swift */; };
+		A9AB2566238171CF002496A1 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB2565238171CF002496A1 /* Date+Utils.swift */; };
 		A9BB616C1A4DCD6700E4731B /* Calories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9BB616A1A4DCD6700E4731B /* Calories.xcdatamodeld */; };
-		A9BB616E1A4DCD6700E4731B /* CalorieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB616D1A4DCD6700E4731B /* CalorieListViewController.swift */; };
-		A9BB61711A4DCD6700E4731B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BB616F1A4DCD6700E4731B /* Main.storyboard */; };
 		A9BB61731A4DCD6700E4731B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BB61721A4DCD6700E4731B /* Images.xcassets */; };
 		A9BB61821A4DCD6700E4731B /* CaloriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB61811A4DCD6700E4731B /* CaloriesTests.swift */; };
-		A9BB618C1A4DDDEE00E4731B /* CalorieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BB618B1A4DDDEE00E4731B /* CalorieDetailViewController.swift */; };
-		A9FC9C562373560B00717437 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9FC9C552373560B00717437 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,34 +37,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A92440EE1C001C1E0052A44D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
-		A92D5FC11BFAE1B900B028D4 /* CalorieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieTableViewCell.swift; sourceTree = "<group>"; };
-		A92D5FC31BFAE1E600B028D4 /* CalorieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalorieTableViewCell.xib; sourceTree = "<group>"; };
-		A93F9F981ABBE51200B547DB /* Plan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Plan; sourceTree = "<group>"; };
+		A93F387729FDD94400DEF367 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A93F591229FBCDD30065E8C2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A95A40221C0F448100D08897 /* Calories.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Calories.entitlements; sourceTree = "<group>"; };
-		A961274C1A4F1B530037BA46 /* SettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		A961274C1A4F1B530037BA46 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A961274E1A506E320037BA46 /* Calories 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Calories 2.xcdatamodel"; sourceTree = "<group>"; };
-		A961274F1A50756B0037BA46 /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Food.h; path = ../Food.h; sourceTree = "<group>"; };
-		A96127501A50756B0037BA46 /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Food.m; path = ../Food.m; sourceTree = "<group>"; };
-		A964B06F1BF1969B007686F5 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
 		A964B0711BF19776007686F5 /* ThemeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeKit.swift; sourceTree = "<group>"; };
-		A96F683A1AD3787200735CE1 /* Food+AdditionalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Food+AdditionalMethods.h"; sourceTree = "<group>"; };
-		A96F683B1AD3787200735CE1 /* Food+AdditionalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Food+AdditionalMethods.m"; sourceTree = "<group>"; };
+		A96B90D029FC6DC700BA74AD /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		A96B90D129FC6DC700BA74AD /* CalorieEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieEntryView.swift; sourceTree = "<group>"; };
+		A96B90D329FC6DC800BA74AD /* CalorieListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieListView.swift; sourceTree = "<group>"; };
+		A96B90D429FC6DC800BA74AD /* CalorieRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieRowView.swift; sourceTree = "<group>"; };
+		A96B90D529FC6DC800BA74AD /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A96B90DD29FC6E8600BA74AD /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		A96B90E029FC782200BA74AD /* CaloriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesApp.swift; sourceTree = "<group>"; };
+		A96B90E829FD66FE00BA74AD /* Food+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Food+UI.swift"; sourceTree = "<group>"; };
 		A97E9F2D1A542B3D00D40B5B /* Calories 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Calories 3.xcdatamodel"; sourceTree = "<group>"; };
-		A9AB2565238171CF002496A1 /* CalorieAppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieAppModel.swift; sourceTree = "<group>"; };
+		A98F440C29F585E80075885D /* Calories 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Calories 4.xcdatamodel"; sourceTree = "<group>"; };
+		A98F440D29F58F380075885D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A98F442529F7382D0075885D /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		A999EC732A1023160090E69D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A9AB2565238171CF002496A1 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		A9BB61631A4DCD6700E4731B /* Calorie Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calorie Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BB61671A4DCD6700E4731B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A9BB61681A4DCD6700E4731B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9BB616B1A4DCD6700E4731B /* Calories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calories.xcdatamodel; sourceTree = "<group>"; };
-		A9BB616D1A4DCD6700E4731B /* CalorieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieListViewController.swift; sourceTree = "<group>"; };
-		A9BB61701A4DCD6700E4731B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9BB61721A4DCD6700E4731B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A9BB617B1A4DCD6700E4731B /* CaloriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaloriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BB61801A4DCD6700E4731B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9BB61811A4DCD6700E4731B /* CaloriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesTests.swift; sourceTree = "<group>"; };
-		A9BB618B1A4DDDEE00E4731B /* CalorieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalorieDetailViewController.swift; sourceTree = "<group>"; };
-		A9BB61921A4DE61000E4731B /* Calories-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calories-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		A9FC9C552373560B00717437 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +87,16 @@
 		A90CDD911A5D08CE00544B04 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A9BB616F1A4DCD6700E4731B /* Main.storyboard */,
-				A9FC9C552373560B00717437 /* LaunchScreen.storyboard */,
+				A96B90D129FC6DC700BA74AD /* CalorieEntryView.swift */,
+				A96B90D329FC6DC800BA74AD /* CalorieListView.swift */,
+				A96B90D429FC6DC800BA74AD /* CalorieRowView.swift */,
+				A96B90E029FC782200BA74AD /* CaloriesApp.swift */,
+				A96B90D529FC6DC800BA74AD /* ContentView.swift */,
+				A96B90E829FD66FE00BA74AD /* Food+UI.swift */,
+				A999EC732A1023160090E69D /* SceneDelegate.swift */,
+				A93F591229FBCDD30065E8C2 /* SettingsView.swift */,
 				A964B0711BF19776007686F5 /* ThemeKit.swift */,
-				A964B06F1BF1969B007686F5 /* NumberView.swift */,
-				A92D5FC11BFAE1B900B028D4 /* CalorieTableViewCell.swift */,
-				A92D5FC31BFAE1E600B028D4 /* CalorieTableViewCell.xib */,
+				A96B90D029FC6DC700BA74AD /* View+Extensions.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -103,32 +105,29 @@
 			isa = PBXGroup;
 			children = (
 				A9BB616A1A4DCD6700E4731B /* Calories.xcdatamodeld */,
-				A9AB2565238171CF002496A1 /* CalorieAppModel.swift */,
-				A961274C1A4F1B530037BA46 /* SettingsModel.swift */,
-				A961274F1A50756B0037BA46 /* Food.h */,
-				A96127501A50756B0037BA46 /* Food.m */,
-				A96F683A1AD3787200735CE1 /* Food+AdditionalMethods.h */,
-				A96F683B1AD3787200735CE1 /* Food+AdditionalMethods.m */,
+				A9AB2565238171CF002496A1 /* Date+Utils.swift */,
+				A96B90DD29FC6E8600BA74AD /* Food.swift */,
+				A98F442529F7382D0075885D /* PersistenceManager.swift */,
+				A961274C1A4F1B530037BA46 /* Settings.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		A93B49C61A5247B00019A296 /* Controllers */ = {
+		A93F387429FDD94400DEF367 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A9BB616D1A4DCD6700E4731B /* CalorieListViewController.swift */,
-				A9BB618B1A4DDDEE00E4731B /* CalorieDetailViewController.swift */,
-				A92440EE1C001C1E0052A44D /* SettingsViewController.swift */,
+				A93F387729FDD94400DEF367 /* SwiftUI.framework */,
 			);
-			name = Controllers;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A9BB615A1A4DCD6700E4731B = {
 			isa = PBXGroup;
 			children = (
-				A93F9F981ABBE51200B547DB /* Plan */,
+				A98F440D29F58F380075885D /* README.md */,
 				A9BB61651A4DCD6700E4731B /* Calories */,
 				A9BB617E1A4DCD6700E4731B /* CaloriesTests */,
+				A93F387429FDD94400DEF367 /* Frameworks */,
 				A9BB61641A4DCD6700E4731B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,14 +144,10 @@
 		A9BB61651A4DCD6700E4731B /* Calories */ = {
 			isa = PBXGroup;
 			children = (
-				A95A40221C0F448100D08897 /* Calories.entitlements */,
-				A9BB61681A4DCD6700E4731B /* AppDelegate.swift */,
-				A93B49C61A5247B00019A296 /* Controllers */,
-				A90CDD911A5D08CE00544B04 /* Views */,
 				A93B49C51A5247A60019A296 /* Model */,
-				A9BB61721A4DCD6700E4731B /* Images.xcassets */,
-				A9BB61921A4DE61000E4731B /* Calories-Bridging-Header.h */,
 				A9BB61661A4DCD6700E4731B /* Supporting Files */,
+				A90CDD911A5D08CE00544B04 /* Views */,
+				A9BB61721A4DCD6700E4731B /* Images.xcassets */,
 			);
 			path = Calories;
 			sourceTree = "<group>";
@@ -160,6 +155,7 @@
 		A9BB61661A4DCD6700E4731B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A95A40221C0F448100D08897 /* Calories.entitlements */,
 				A9BB61671A4DCD6700E4731B /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -227,7 +223,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Bill Gestrich";
 				TargetAttributes = {
@@ -273,11 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9BB61711A4DCD6700E4731B /* Main.storyboard in Resources */,
-				A93F9F991ABBE51200B547DB /* Plan in Resources */,
 				A9BB61731A4DCD6700E4731B /* Images.xcassets in Resources */,
-				A9FC9C562373560B00717437 /* LaunchScreen.storyboard in Resources */,
-				A92D5FC41BFAE1E600B028D4 /* CalorieTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,18 +287,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9BB616E1A4DCD6700E4731B /* CalorieListViewController.swift in Sources */,
-				A964B0701BF1969B007686F5 /* NumberView.swift in Sources */,
-				A92440EF1C001C1E0052A44D /* SettingsViewController.swift in Sources */,
 				A964B0721BF19776007686F5 /* ThemeKit.swift in Sources */,
-				A96127511A50756B0037BA46 /* Food.m in Sources */,
-				A9AB2566238171CF002496A1 /* CalorieAppModel.swift in Sources */,
-				A9BB61691A4DCD6700E4731B /* AppDelegate.swift in Sources */,
-				A96F683C1AD3787200735CE1 /* Food+AdditionalMethods.m in Sources */,
+				A96B90DC29FC6DC800BA74AD /* ContentView.swift in Sources */,
+				A98F442629F7382D0075885D /* PersistenceManager.swift in Sources */,
+				A96B90E929FD66FE00BA74AD /* Food+UI.swift in Sources */,
+				A9AB2566238171CF002496A1 /* Date+Utils.swift in Sources */,
+				A93F591329FBCDD30065E8C2 /* SettingsView.swift in Sources */,
+				A999EC742A1023160090E69D /* SceneDelegate.swift in Sources */,
 				A9BB616C1A4DCD6700E4731B /* Calories.xcdatamodeld in Sources */,
-				A9BB618C1A4DDDEE00E4731B /* CalorieDetailViewController.swift in Sources */,
-				A961274D1A4F1B530037BA46 /* SettingsModel.swift in Sources */,
-				A92D5FC21BFAE1B900B028D4 /* CalorieTableViewCell.swift in Sources */,
+				A96B90E129FC782200BA74AD /* CaloriesApp.swift in Sources */,
+				A96B90DB29FC6DC800BA74AD /* CalorieRowView.swift in Sources */,
+				A96B90DE29FC6E8600BA74AD /* Food.swift in Sources */,
+				A96B90DA29FC6DC800BA74AD /* CalorieListView.swift in Sources */,
+				A961274D1A4F1B530037BA46 /* Settings.swift in Sources */,
+				A96B90D829FC6DC800BA74AD /* CalorieEntryView.swift in Sources */,
+				A96B90D729FC6DC800BA74AD /* View+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,17 +322,6 @@
 			targetProxy = A9BB617C1A4DCD6700E4731B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A9BB616F1A4DCD6700E4731B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9BB61701A4DCD6700E4731B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A9BB61831A4DCD6700E4731B /* Debug */ = {
@@ -451,24 +435,25 @@
 		A9BB61861A4DCD6700E4731B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Calories/Calories.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 5K844XFC6W;
 				INFOPLIST_FILE = Calories/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.gestrich.calorie-log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Calories-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -479,24 +464,25 @@
 		A9BB61871A4DCD6700E4731B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Calories/Calories.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 5K844XFC6W;
 				INFOPLIST_FILE = Calories/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.gestrich.calorie-log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Calories-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -581,11 +567,12 @@
 		A9BB616A1A4DCD6700E4731B /* Calories.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A98F440C29F585E80075885D /* Calories 4.xcdatamodel */,
 				A97E9F2D1A542B3D00D40B5B /* Calories 3.xcdatamodel */,
 				A961274E1A506E320037BA46 /* Calories 2.xcdatamodel */,
 				A9BB616B1A4DCD6700E4731B /* Calories.xcdatamodel */,
 			);
-			currentVersion = A97E9F2D1A542B3D00D40B5B /* Calories 3.xcdatamodel */;
+			currentVersion = A98F440C29F585E80075885D /* Calories 4.xcdatamodel */;
 			path = Calories.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

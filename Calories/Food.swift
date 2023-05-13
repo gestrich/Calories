@@ -9,10 +9,8 @@
 import Foundation
 import CoreData
 
-class Food: NSManagedObject {
-
-    @NSManaged var calories: NSNumber
-    @NSManaged var created: NSDate
-    @NSManaged var name: String
-
+public class Food: NSManagedObject, Identifiable {
+    @NSManaged public var calories: NSNumber
+    @NSManaged public var created: Date
+    @NSManaged public var name: String
 }
