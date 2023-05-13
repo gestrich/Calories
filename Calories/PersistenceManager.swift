@@ -14,8 +14,10 @@ class PersistenceManager: ObservableObject {
     @Published var startOfToday: Date = Date.startOfTodaysLog()
     let timer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
     var cancellable: Any? = nil
+    private let appGroup: String?
     
-    init() {
+    init(appGroup: String?) {
+        self.appGroup = appGroup
         self.cancellable = timer.sink { _ in
             self.updateStartOfTodayIfNecessary()
         }
@@ -28,55 +30,49 @@ class PersistenceManager: ObservableObject {
         }
     }
 
-    lazy var managedObjectModel: NSManagedObjectModel = {
-        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = Bundle.main.url(forResource: "Calories", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
+    lazy var managedObjectContext: NSManagedObjectContext = {
+        persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+        persistentContainer.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        return persistentContainer.viewContext
     }()
-
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
-        // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-        // Create the coordinator and store
-        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = persistentStoreURL
-        var error: NSError? = nil
-        var failureReason = "There was an error creating or loading the application's saved data."
-        let options = [NSMigratePersistentStoresAutomaticallyOption:true, NSInferMappingModelAutomaticallyOption:true]
-        do {
-            try coordinator!.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: options)
-        } catch var error1 as NSError {
-            error = error1
-            coordinator = nil
-            // Report any error we got.
-            var dict = [AnyHashable: Any]()
-            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-            dict[NSLocalizedFailureReasonErrorKey] = failureReason
-            dict[NSUnderlyingErrorKey] = error
-            error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict as? [String : Any])
-            // Replace this with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog("Unresolved error \(String(describing: error)), \(error!.userInfo)")
-            abort()
-        } catch {
-            fatalError()
-        }
-        
-        return coordinator
+    
+    private lazy var persistentContainer: NSPersistentCloudKitContainer = {
+        let container = NSPersistentCloudKitContainer(name: appModelName)
+        container.persistentStoreDescriptions = [persistenStoreDescription]
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
     }()
-
-    lazy var managedObjectContext: NSManagedObjectContext? = {
-        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
-        let coordinator = self.persistentStoreCoordinator
-        if coordinator == nil {
-            return nil
-        }
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = coordinator
-        return managedObjectContext
+    
+    private lazy var persistenStoreDescription: NSPersistentStoreDescription = {
+        let description = NSPersistentStoreDescription(url: persistentStoreURL)
+        let cloudkitOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: iCloudContainerIdentifier)
+        description.cloudKitContainerOptions = cloudkitOptions
+        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        return description
     }()
     
     private var persistentStoreURL: URL {
-        return self.applicationDocumentsDirectory.appendingPathComponent("Calories.sqlite")
+        if let appGroup {
+            guard let fileContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup) else {
+                fatalError("Shared file container could not be created.")
+            }
+            return fileContainer.appendingPathComponent(appModelName).appendingPathExtension("sqlite")
+        } else {
+            return self.applicationDocumentsDirectory.appendingPathComponent(appModelName).appendingPathExtension("sqlite")
+        }
+    }
+    
+    private var appModelName: String {
+        return "Calories"
+    }
+    
+    private var iCloudContainerIdentifier: String {
+        return "iCloud.org.gestrich.calorie-log"
     }
     
     private lazy var applicationDocumentsDirectory: URL = {

@@ -80,9 +80,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let persistenceManager = PersistenceManager()
+        let persistenceManager = PersistenceManager(appGroup: nil)
         let contentView = ContentView()
-            .environment(\.managedObjectContext, persistenceManager.managedObjectContext!)
+            .environment(\.managedObjectContext, persistenceManager.managedObjectContext)
             .environmentObject(persistenceManager)
         return contentView
     }

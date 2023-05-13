@@ -12,14 +12,14 @@ import SwiftUI
 struct Calories_App: App {
     
     @Environment(\.scenePhase) var scenePhase
-    let persistenceManager = PersistenceManager()
+    let persistenceManager = PersistenceManager(appGroup: nil)
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(
                     \.managedObjectContext,
-                     persistenceManager.managedObjectContext!)
+                     persistenceManager.managedObjectContext)
                 .environmentObject(Settings())
                 .environmentObject(persistenceManager)
         }.onChange(of: scenePhase) { newPhase in
