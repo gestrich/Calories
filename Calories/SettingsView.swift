@@ -64,6 +64,9 @@ struct SettingsView: View {
                             deleteAllRecords()
                         }
                     }
+                    Button("Wake Watch") {
+                        WatchConnectivityManager.shared.send("Hello World!\n\(Date().ISO8601Format())")
+                    }
                 }
             }
 
