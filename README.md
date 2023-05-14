@@ -5,11 +5,10 @@
 * Increment the "Marketing Version" in build settings.
 * Increment the "Project Version" in build settings.
 * Submit for review
-* Tag released commit.
+* Tag released commit: git tag -a 1.6 -m "Version 1.6 - SwiftUI release"
 
 ## Feature Roadmap
 
-* SwiftUI + Redesign
 * CloudKit Sync Support
 * Watch App
   * Calories Remaining
@@ -17,15 +16,6 @@
 * Watch Complication
   * Calories Remaining
 
-### SwiftUI + Redesign
-    * Squash commits
-    * Use Alternate persistent manager
-    * Remove CloudKit changes
-        * Core Data
-            * Need to keep new file thing?
-        * Project
-    * Remove Watch changes
-    
 ### CloudKit + Watch Release
     * Settings in Core Data
     * Share Core Data with Extension
